@@ -22,7 +22,7 @@ struct HomeListStepViewModel: HomeListViewModelProtocol {
     
     
     init(stepNumber: Int) {
-        resultNum = NSMutableAttributedString().attributeString(String(stepNumber), numSize: 30, unit: L10n.GuideStep.string, unitSize: 12)
+        resultNum = NSMutableAttributedString().attributeString(" " + String(stepNumber), numSize: 30, unit: " " + L10n.GuideStep.string, unitSize: 12)
     }
     
     func onClickCell() {
@@ -49,8 +49,8 @@ struct HomeListSleepViewModel: HomeListViewModelProtocol {
 
         let sleepHour = sleepTime / 60
         let sleepMin = sleepTime - sleepHour * 60
-        resultNum = NSMutableAttributedString().attributeString(String(sleepHour), numSize: 30, unit: L10n.HomeSleepRingUnitHour.string, unitSize: 12)
-        resultNum.appendAttributedString(NSMutableAttributedString().attributeString(String(sleepMin), numSize: 30, unit: L10n.HomeSleepRingUnitMinute.string, unitSize: 12))
+        resultNum = NSMutableAttributedString().attributeString(String(sleepHour), numSize: 30, unit: " " + L10n.HomeSleepRingUnitHour.string + " ", unitSize: 12)
+        resultNum.appendAttributedString(NSMutableAttributedString().attributeString(String(sleepMin), numSize: 30, unit: " " + L10n.HomeSleepRingUnitMinute.string, unitSize: 12))
     }
     
     func onClickCell() {

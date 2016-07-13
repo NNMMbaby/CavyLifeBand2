@@ -23,7 +23,6 @@ extension NSMutableAttributedString {
      */
     func attributeString(num: String, numSize: CGFloat, unit: String, unitSize: CGFloat) -> NSMutableAttributedString {
     
-        
         let currentString = NSMutableAttributedString(string: "\(num)\(unit)")
         
         currentString.addAttribute(NSFontAttributeName, value: UIFont.mediumSystemFontOfSize(numSize), range: NSMakeRange(0, num.length))
@@ -33,5 +32,16 @@ extension NSMutableAttributedString {
 
     }
     
+    
+    func attributeStringWithSpace(num: String, numSize: CGFloat, unit: String, unitSize: CGFloat) -> NSMutableAttributedString {
+        
+        let currentString = NSMutableAttributedString(string: "\(num)\(unit)")
+        
+        currentString.addAttribute(NSFontAttributeName, value: UIFont.mediumSystemFontOfSize(numSize), range: NSMakeRange(0, num.length))
+        currentString.addAttribute(NSFontAttributeName, value: UIFont.mediumSystemFontOfSize(unitSize), range: NSMakeRange(currentString.length - unit.length, unit.length))
+        
+        return currentString
+        
+    }
     
 }
