@@ -46,6 +46,16 @@ class AboutVC: UIViewController, BaseViewControllerPresenter {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     返回按钮处理
+     */
+    func onLeftBtnBack() {
+        
+        self.navigationController?.popViewControllerAnimated(false)
+        NSNotificationCenter.defaultCenter().postNotificationName(NotificationName.HomeLeftOnClickMenu.rawValue, object: nil)
+        
+    }
+    
     func baseUISetting() {
         self.view.backgroundColor = UIColor(named: .HomeViewMainColor)
         
@@ -79,15 +89,15 @@ class AboutVC: UIViewController, BaseViewControllerPresenter {
             self?.pushVC(targetVC)
         }
         
-        copyrightLabel.addTapGesture { [weak self] sender in
-            Log.info("前往版权网页")
-            
-            let targetVC = WebViewController()
-            
-            targetVC.dataSource = CopyrightWebViewModel()
-            
-            self?.pushVC(targetVC)
-        }
+//        copyrightLabel.addTapGesture { [weak self] sender in
+//            Log.info("前往版权网页")
+//            
+//            let targetVC = WebViewController()
+//            
+//            targetVC.dataSource = CopyrightWebViewModel()
+//            
+//            self?.pushVC(targetVC)
+//        }
         
     }
     

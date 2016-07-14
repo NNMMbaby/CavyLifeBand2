@@ -5,7 +5,8 @@
 //  Created by Jessica on 16/6/22.
 //  Copyright © 2016年 xuemincai. All rights reserved.
 //
-
+import UIKit
+import EZSwiftExtensions
 
 class ChartsSubTimeBucketCell: UICollectionViewCell {
     
@@ -22,12 +23,22 @@ class ChartsSubTimeBucketCell: UICollectionViewCell {
         }
         label.textAlignment = .Center
         label.textColor = UIColor.whiteColor()
-        label.font = UIFont(name: "Helvetica-Bold", size: 14)
+        label.font = UIFont.systemFontOfSize(14)
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func selectStatus() {
+        
+         label.font = UIFont(name: "Helvetica-Bold", size: 14)
+    }
+    
+    func unSlectStatus() {
+        
+        label.font = UIFont.systemFontOfSize(14)
     }
     
 }
